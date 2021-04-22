@@ -46,45 +46,45 @@ xor si,si
 	;Копіювання масиву 
     proc copy
 		mov cx, 256
-		L11:
+		L1:
 			mov bx, [ds:si]
 			mov [ds:si+120h], bx
 			add si,2
-			loop L11
+			loop L1
 		mov cx, 256
-		L21:
+		L2:
 			mov bx, [ds:si]
 			mov [ds:si+120h], bx
 			add si,2
-			loop L21
+			loop L2
 		mov cx, 256
-		L31:
+		L3:
 			mov bx, [ds:si]
 			mov [ds:si+120h], bx
 			add si,2
-			loop L31
+			loop L3
 		mov cx, 256
-		L41:
+		L4:
 			mov bx, [ds:si]
 			mov [ds:si+120h], bx
 			add si,2
-			loop L41
+			loop L4
 		mov cx, 256
-		L51:
+		L5:
 			mov bx, [ds:si]
 			mov [ds:si+120h], bx
 			add si,2
-			loop L51
+			loop L5
 	endp copy 
 
-		;Копіювання до стеку
-		mov cx, 256
-		xor si, si                       
-    	stackLoop:
-        	mov ax,[ds:[si]]             
-        	push ax                      
-        	add si, 2                    
-        	loop stackLoop
+	;Копіювання до стеку
+	mov cx, 256
+	xor si, si                       
+    stackLoop:
+        mov bx,[ds:si]             
+        push bx                      
+        add si, 2                    
+        loop stackLoop
 
 
 	
@@ -151,20 +151,5 @@ Exit:
 		sub bp, 2
 		mov al, 3
 		mov [bp] ,al
-		ret
 	endp data_set
-
-
-	;Перенесення масиву в стек
-	proc arrToStack
-		mov cx, 256
-		xor si, si                       
-    	stackLoop1:
-        	mov ax,[ds:[si]]             
-        	push ax                      
-        	add si, 2                    
-        	loop stackLoop1
-		ret
-	endp arrToStack
-
 end Start
