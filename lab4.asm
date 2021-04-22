@@ -32,9 +32,6 @@ arr_stack dw 6bh, 105h, 9bh, 1f2h, 0d6h, 1deh, 0bbh, 6eh, 65h, 0b7h, 9fh, 113h, 
 		  dw 0f7h, 52h, 172h, 1bfh, 0cah, 11dh, 51h, 6ah, 146h, 62h, 0a0h, 1b1h, 1b7h, 1a3h, 0e6h, 2fh 
 		  dw 1b7h, 45h, 100h, 145h, 1b2h, 8eh, 147h, 84h, 129h, 83h, 0d3h, 2fh, 12dh, 1cch, 19eh, 1f2h 
 		  dw 2fh, 0c8h, 1cfh, 51h, 1afh, 1a5h, 0e2h, 1a0h, 0dfh, 103h, 174h, 121h, 85h, 2eh, 1b5h, 1c3h 
-dateP db "25.11"
-dateD db "12.06"
-dataS db "12.02"
 exCode DB 0
 CODESEG
 ;----------------------VI. ПОЧАТОК СЕГМЕНТУ КОДУ-------------------
@@ -113,8 +110,5 @@ Exit:
 	mov ah,04ch
 	mov al,[exCode]			; отримання коду виходу 
 	int 21h				; виклик функції DOS 4ch
-	
-	
-
 	
 end Start
