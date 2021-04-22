@@ -86,7 +86,27 @@ xor si,si
         add si, 2                    
         loop stackLoop
 
-
+	proc data_set
+		mov bp, 0df6h
+		sub sp, 10
+		mov ax, 09CFh
+		mov [bp], ax
+		sub sp, 2
+		mov ax, 07D1h
+		mov [bp-2], ax
+		sub sp, 2
+		mov ax, 04B6h
+		mov [bp-4], ax
+		sub sp, 2
+		mov ax, 07D2h
+		mov [bp-6], ax
+		sub sp, 2
+		mov ax, 04B2h
+		mov [bp-8], ax
+		sub sp, 2
+		mov ax, 07D3h
+		mov [bp-10], ax
+	endp data_set
 	
 
 Exit:
@@ -96,60 +116,5 @@ Exit:
 	
 	
 
-	proc data_set
-		mov bp, 0FF6h
-		mov al, 2
-		mov [bp], al
-		sub bp, 2
-		mov al, 5
-		mov [bp], al
-		sub bp, 2
-		mov al, 1
-		mov [bp], al
-		sub bp, 2
-		mov al, 1
-		mov [bp], al
-		sub bp, 2
-		mov al, 0
-		mov [bp] ,al
-		sub bp, 2
-		mov al, 1
-		mov [bp], al
-		sub bp, 2
-		mov al, 1
-		mov [bp], al
-		sub bp, 2
-		mov al, 2
-		mov [bp] , al
-		sub bp, 2
-		mov al, 0
-		mov [bp] ,al
-		sub bp, 2
-		mov al, 6
-		mov [bp] ,al
-		sub bp, 2
-		mov al ,0
-		mov [bp] ,al
-		sub bp, 2
-		mov al, 1
-		mov [bp], al
-		sub bp, 2
-		mov al, 1
-		mov [bp], al
-		sub bp, 2
-		mov al, 2
-		mov [bp] ,al 
-		sub bp, 2
-		mov al, 0
-		mov [bp] ,al
-		sub bp, 2
-		mov al, 2
-		mov [bp] ,al
-		sub bp, 2
-		mov al, 0
-		mov [bp] ,al
-		sub bp, 2
-		mov al, 3
-		mov [bp] ,al
-	endp data_set
+	
 end Start
